@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class CD extends Model
 {
@@ -15,14 +15,24 @@ class CD extends Model
      * @var array
      */
     protected $fillable = [
-        'judul',
-        'namapenerbit',
-        'namapenulis',
-        'deskripsi',
-        'tahunterbit',
+        'title',
+        'author',
+        'publisher',
+        'description',
+        'price',
         'stock',
+        'datePublished',
+        'genre',
+        'onlineLink',
+        'catalogue_type'
     ];
 
     public $timestamps = false;
     public $updated_at = false;
+
+    public function borrowedItems()
+{
+    return $this->morphMany(BorrowedItem::class, 'borrowable');
+}
+
 }

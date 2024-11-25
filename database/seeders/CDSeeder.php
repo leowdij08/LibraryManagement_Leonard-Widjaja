@@ -5,44 +5,74 @@ namespace Database\Seeders;
 use App\Models\CD;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Carbon\Carbon;
 
 class CDSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
-
-    //  protected $table = 'CDs';
-
     public function run(): void
     {
-        CD::create(
-            [
-                'judul' => 'Belajar Laravel',
-                'namapenerbit' => 'Penerbit A',
-                'namapenulis' => 'Penulis A',
-                'deskripsi' => 'Panduan lengkap untuk belajar Laravel dari dasar hingga mahir.',
-                'tahunterbit' => Carbon::parse('2023-01-15'),
-                'stock' => 10,
-            ]);
-        CD::create(
-                [
-                'judul' => 'Pemrograman PHP',
-                'namapenerbit' => 'Penerbit B',
-                'namapenulis' => 'Penulis B',
-                'deskripsi' => 'Buku referensi untuk memahami pemrograman PHP.',
-                'tahunterbit' => Carbon::parse('2022-06-10'),
-                'stock' => 5,
-            ]);
-        CD::create(
-                [
-                'judul' => 'Dasar-Dasar Database',
-                'namapenerbit' => 'Penerbit C',
-                'namapenulis' => 'Penulis C',
-                'deskripsi' => 'Mengupas dasar-dasar manajemen database dan SQL.',
-                'tahunterbit' => Carbon::parse('2021-09-25'),
-                'stock' => 8,
+        CD::create([
+            'title' => 'Abbey Road',
+            'author' => 'The Beatles',
+            'publisher' => 'Apple Records',
+            'description' => 'The iconic album from The Beatles featuring classics like "Come Together" and "Here Comes the Sun".',
+            'price' => 250000,
+            'stock' => 15,
+            'datePublished' => '1969-09-26',
+            'genre' => 'Rock',
+            'onlineLink' => 'https://example.com/abbey-road',
+            'catalogue_type' => 'CD',
+        ]);
+
+        CD::create([
+            'title' => 'Rumours',
+            'author' => 'Fleetwood Mac',
+            'publisher' => 'Warner Bros. Records',
+            'description' => 'One of the best-selling albums of all time, featuring timeless tracks like "Go Your Own Way" and "Dreams".',
+            'price' => 220000,
+            'stock' => 10,
+            'datePublished' => '1977-02-04',
+            'genre' => 'Rock',
+            'onlineLink' => 'https://example.com/rumours',
+            'catalogue_type' => 'CD',
+        ]);
+
+        CD::create([
+            'title' => 'Kind of Blue',
+            'author' => 'Miles Davis',
+            'publisher' => 'Columbia Records',
+            'description' => 'A masterpiece of jazz, regarded as one of the greatest albums of all time, featuring Miles Davis and John Coltrane.',
+            'price' => 180000,
+            'stock' => 20,
+            'datePublished' => '1959-08-17',
+            'genre' => 'Jazz',
+            'onlineLink' => 'https://example.com/kind-of-blue',
+            'catalogue_type' => 'CD',
+        ]);
+
+        CD::create([
+            'title' => '25',
+            'author' => 'Adele',
+            'publisher' => 'XL Recordings',
+            'description' => 'Adele\'s record-breaking album, featuring chart-topping hits like "Hello" and "When We Were Young".',
+            'price' => 200000,
+            'stock' => 18,
+            'datePublished' => '2015-11-20',
+            'genre' => 'Pop',
+            'onlineLink' => 'https://example.com/25',
+            'catalogue_type' => 'CD',
+        ]);
+
+        CD::create([
+            'title' => 'Thriller',
+            'author' => 'Michael Jackson',
+            'publisher' => 'Epic Records',
+            'description' => 'The best-selling album of all time, featuring hits like "Billie Jean", "Beat It", and "Thriller".',
+            'price' => 300000,
+            'stock' => 25,
+            'datePublished' => '1982-11-30',
+            'genre' => 'Pop',
+            'onlineLink' => 'https://example.com/thriller',
+            'catalogue_type' => 'CD',
         ]);
     }
 }

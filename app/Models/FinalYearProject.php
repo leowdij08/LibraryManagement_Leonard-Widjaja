@@ -15,13 +15,22 @@ class FinalYearProject extends Model
      * @var array
      */
     protected $fillable = [
-        'judul',
-        'namapenulis',
-        'deskripsi',
-        'tahunterbit',
+        'title',
+        'author',
+        'publisher',
+        'description',
         'stock',
+        'datePublished',
+        'onlineLink',
+        'catalogue_type'
     ];
 
     public $timestamps = false;
     public $updated_at = false;
+
+    public function borrowedItems()
+{
+    return $this->morphMany(BorrowedItem::class, 'borrowable');
+}
+
 }

@@ -21,7 +21,4 @@ class Product extends Model
         'price',
         'stock',
     ];
-
-    public $timestamps = false;
-    public $updated_at = false;
 }

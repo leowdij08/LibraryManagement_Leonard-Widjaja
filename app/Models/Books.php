@@ -15,14 +15,24 @@ class Books extends Model
      * @var array
      */
     protected $fillable = [
-        'judul',
-        'namapenerbit',
-        'namapenulis',
-        'deskripsibuku',
-        'tahunterbit',
+        'title',
+        'author',
+        'publisher',
+        'description',
+        'price',
         'stock',
+        'datePublished',
+        'genre',
+        'onlineLink',
+        'catalogue_type'
     ];
 
     public $timestamps = false;
     public $updated_at = false;
+
+    public function borrowedItems()
+{
+    return $this->morphMany(BorrowedItem::class, 'borrowable');
+}
+
 }
