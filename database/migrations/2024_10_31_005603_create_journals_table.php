@@ -6,30 +6,25 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('journals', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('author');
-            $table->string('publisher');
-            $table->text('description');
-            $table->bigInteger('price')->default(0);
-            $table->integer('stock')->default(0);
-            $table->date('datePublished');
-            $table->smallInteger('volume');
-            $table->smallInteger('series');
-            $table->smallInteger('number');
-            $table->text('onlineLink');
+            $table->string('title', 255);
+            $table->string('author', 255);
+            $table->string('publisher', 255);
+            $table->text('abstract')->nullable();
+            $table->unsignedBigInteger('price')->default(0);
+            $table->unsignedInteger('available_copies')->default(0);
+            $table->date('release_date');
+            $table->unsignedSmallInteger('volume');
+            $table->unsignedSmallInteger('issue');
+            $table->unsignedSmallInteger('part')->nullable();
+            $table->string('access_url', 512)->nullable();
+            $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('journals');

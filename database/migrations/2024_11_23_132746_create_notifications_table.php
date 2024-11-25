@@ -10,10 +10,10 @@ class CreateNotificationsTable extends Migration
     {
         Schema::create('notifications', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade'); // ID pengguna terkait
-            $table->string('message'); // Pesan notifikasi
-            $table->boolean('is_read')->default(false); // Status notifikasi: sudah dibaca atau belum
-            $table->timestamps(); // Waktu dibuat dan diperbarui
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->string('message');
+            $table->boolean('is_read')->default(false);
+            $table->timestamps();
         });
     }
 

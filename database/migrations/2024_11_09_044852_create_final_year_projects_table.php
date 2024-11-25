@@ -6,27 +6,22 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('final_year_projects', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('author');
-            $table->string('publisher');
-            $table->text('description');
-            $table->integer('stock')->default(0);
-            $table->date('datePublished');
-            $table->text('onlineLink');
-            $table->string('catalogue_type')->default('final year project');
+            $table->string('title', 255);
+            $table->string('author', 255);
+            $table->string('university', 255);
+            $table->text('abstract')->nullable();
+            $table->unsignedInteger('available_copies')->default(0);
+            $table->date('publication_date');
+            $table->string('project_url', 512)->nullable();
+            $table->string('project_type')->default('final year project'); 
+            $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('final_year_projects');

@@ -20,7 +20,7 @@ return new class extends Migration
             $table->bigInteger('price')->default(0);
             $table->integer('stock')->default(0);
             $table->date('datePublished');
-            $table->enum('genre', ['fiction', 'nonfiction', 'fantasy', 'mystery', 'science_fiction', 'biography']);
+            $table->enum('genre', ['fiction', 'nonfiction', 'fantasy', 'mystery', 'science_fiction', 'biography', 'rock', 'jazz', 'pop']);
             $table->text('onlineLink');
             $table->string('catalogue_type')->default('CD');
         });

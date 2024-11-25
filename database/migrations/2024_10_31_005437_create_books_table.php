@@ -6,28 +6,23 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('author');
-            $table->string('publisher');
-            $table->text('description');
-            $table->bigInteger('price')->default(0);
-            $table->integer('stock')->default(0);
-            $table->date('datePublished');
-            $table->enum('genre', ['fiction', 'nonfiction', 'fantasy', 'mystery', 'science_fiction', 'biography']);
-            $table->text('onlineLink');
+            $table->string('title', 255);
+            $table->string('author', 255);
+            $table->string('publisher', 255);
+            $table->text('description')->nullable();
+            $table->unsignedBigInteger('price')->default(0);
+            $table->unsignedInteger('stock')->default(0);
+            $table->date('published_date');
+            $table->enum('category', ['classic', 'adventure', 'philosophy', 'science', 'history', 'technology', 'psychology']);
+            $table->string('purchase_link', 512)->nullable();
+            $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('books');

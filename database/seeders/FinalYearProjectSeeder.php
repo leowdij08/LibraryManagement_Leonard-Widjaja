@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\FinalYearProject;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class FinalYearProjectSeeder extends Seeder
@@ -13,59 +12,58 @@ class FinalYearProjectSeeder extends Seeder
      */
     public function run(): void
     {
-        FinalYearProject::create([
-            'title' => 'Development of a Smart Irrigation System Using IoT',
-            'author' => 'Emily Carter',
-            'publisher' => 'GreenTech University',
-            'description' => 'A project focused on designing an IoT-based smart irrigation system to optimize water usage in agriculture. The system utilizes real-time sensors and cloud-based analytics.',
-            'stock' => 6,
-            'datePublished' => '2024-01-15',
-            'onlineLink' => 'https://example.com/project/smart-irrigation-iot',
-            'catalogue_type' => 'final year project',
-        ]);
+        $projects = [
+            [
+                'title' => 'AI-Powered Agriculture: Precision Farming System',
+                'author' => 'Liam Peterson',
+                'university' => 'AgriTech University',
+                'abstract' => 'A precision farming system leveraging AI and IoT to monitor crop health, optimize irrigation, and improve yield efficiency.',
+                'available_copies' => 5,
+                'publication_date' => '2024-03-10',
+                'project_url' => 'https://example.com/project/precision-farming-ai',
+            ],
+            [
+                'title' => 'Blockchain for Supply Chain Transparency',
+                'author' => 'Sophia Jackson',
+                'university' => 'TechWorld University',
+                'abstract' => 'A blockchain-based solution for ensuring transparency and traceability in supply chain operations.',
+                'available_copies' => 7,
+                'publication_date' => '2023-09-15',
+                'project_url' => 'https://example.com/project/blockchain-supply-chain',
+            ],
+            [
+                'title' => 'Smart Home Automation Using IoT',
+                'author' => 'Ethan Brown',
+                'university' => 'FutureTech Institute',
+                'abstract' => 'A project focusing on creating a smart home ecosystem with IoT-enabled devices for energy efficiency and security.',
+                'available_copies' => 4,
+                'publication_date' => '2023-12-20',
+                'project_url' => null,
+            ],
+            [
+                'title' => 'Virtual Reality for Medical Training',
+                'author' => 'Olivia Martinez',
+                'university' => 'HealthTech University',
+                'abstract' => 'Exploring the use of VR to simulate medical scenarios, enhancing the training experience for healthcare professionals.',
+                'available_copies' => 6,
+                'publication_date' => '2024-01-25',
+                'project_url' => 'https://example.com/project/vr-medical-training',
+            ],
+            [
+                'title' => 'Machine Learning for Financial Forecasting',
+                'author' => 'Ava Wilson',
+                'university' => 'DataScience Academy',
+                'abstract' => 'A project using machine learning models to predict stock market trends and assist in financial decision-making.',
+                'available_copies' => 8,
+                'publication_date' => '2023-11-30',
+                'project_url' => 'https://example.com/project/ml-financial-forecasting',
+            ],
+        ];
 
-        FinalYearProject::create([
-            'title' => 'Mobile App for Mental Health Monitoring and Support',
-            'author' => 'Michael Johnson',
-            'publisher' => 'HealthTech University',
-            'description' => 'A mobile application designed to provide mental health support through mood tracking, meditation exercises, and AI-driven suggestions for users.',
-            'stock' => 5,
-            'datePublished' => '2023-08-25',
-            'onlineLink' => 'https://example.com/project/mental-health-app',
-            'catalogue_type' => 'final year project',
-        ]);
-
-        FinalYearProject::create([
-            'title' => 'Autonomous Drone Delivery System',
-            'author' => 'Sophia Williams',
-            'publisher' => 'TechInnovators University',
-            'description' => 'This project involves the design and implementation of an autonomous drone system for delivering packages, integrating GPS, obstacle avoidance, and delivery tracking.',
-            'stock' => 3,
-            'datePublished' => '2023-12-10',
-            'onlineLink' => 'https://example.com/project/autonomous-drone-delivery',
-            'catalogue_type' => 'final year project',
-        ]);
-
-        FinalYearProject::create([
-            'title' => 'Renewable Energy Management System',
-            'author' => 'Daniel Brown',
-            'publisher' => 'Sustainable Energy Institute',
-            'description' => 'A system designed to manage and optimize renewable energy sources like solar and wind, using predictive analytics and energy storage solutions.',
-            'stock' => 4,
-            'datePublished' => '2023-11-05',
-            'onlineLink' => 'https://example.com/project/renewable-energy-management',
-            'catalogue_type' => 'final year project',
-        ]);
-
-        FinalYearProject::create([
-            'title' => 'Virtual Reality for Education: Immersive Learning Environments',
-            'author' => 'Olivia Martinez',
-            'publisher' => 'FutureEd University',
-            'description' => 'This project explores the use of virtual reality technology to create immersive learning environments, enhancing student engagement and knowledge retention.',
-            'stock' => 7,
-            'datePublished' => '2024-02-10',
-            'onlineLink' => 'https://example.com/project/vr-education',
-            'catalogue_type' => 'final year project',
-        ]);
+        foreach ($projects as $project) {
+            FinalYearProject::create(array_merge($project, [
+                'project_type' => 'final year project', 
+            ]));
+        }
     }
 }

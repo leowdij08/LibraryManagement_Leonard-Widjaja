@@ -15,10 +15,9 @@ class NotificationSeeder extends Seeder
         foreach ($librarians as $librarian) {
             Notification::create([
                 'user_id' => $librarian->id,
-                'message' => 'You need to update the library collection.',
+                'message' => 'Please review and update the library collection to ensure all materials are current.',
                 'is_read' => false,
             ]);
         }
     }
 }
-

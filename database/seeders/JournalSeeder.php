@@ -3,84 +3,82 @@
 namespace Database\Seeders;
 
 use App\Models\Journal;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class JournalSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-        Journal::create([
-            'title' => 'Journal of Artificial Intelligence Research',
-            'author' => 'Dr. Susan Carter',
-            'publisher' => 'AI Research Society',
-            'description' => 'A peer-reviewed journal covering advancements, applications, and ethical considerations in artificial intelligence.',
-            'price' => 150000,
-            'stock' => 10,
-            'datePublished' => '2024-02-15',
-            'volume' => 12,
-            'series' => 3,
-            'number' => 1,
-            'onlineLink' => 'https://example.com/journal/ai-research',
-        ]);
+        $journals = [
+            [
+                'title' => 'Journal of Artificial Intelligence Research',
+                'author' => 'Dr. Susan Carter',
+                'publisher' => 'AI Research Society',
+                'abstract' => 'A peer-reviewed journal covering advancements, applications, and ethical considerations in artificial intelligence.',
+                'price' => 150000,
+                'available_copies' => 10,
+                'release_date' => '2024-02-15',
+                'volume' => 12,
+                'issue' => 3,
+                'part' => 1,
+                'access_url' => 'https://example.com/journal/ai-research',
+            ],
+            [
+                'title' => 'Sustainability and Climate Change Journal',
+                'author' => 'Dr. Jonathan Green',
+                'publisher' => 'Earth Matters Press',
+                'abstract' => 'A journal focused on global sustainability efforts, climate science, and renewable energy innovations.',
+                'price' => 180000,
+                'available_copies' => 12,
+                'release_date' => '2023-11-01',
+                'volume' => 22,
+                'issue' => 5,
+                'part' => 3,
+                'access_url' => 'https://example.com/journal/sustainability-climate',
+            ],
+            [
+                'title' => 'Global Economics and Policy Journal',
+                'author' => 'Prof. Mark Taylor',
+                'publisher' => 'Economics Press International',
+                'abstract' => 'A journal examining economic policies, global markets, and emerging trends in financial systems.',
+                'price' => 200000,
+                'available_copies' => 8,
+                'release_date' => '2024-01-10',
+                'volume' => 30,
+                'issue' => 4,
+                'part' => 5,
+                'access_url' => 'https://example.com/journal/global-economics',
+            ],
+            [
+                'title' => 'Journal of Advanced Robotics',
+                'author' => 'Dr. Alice Wang',
+                'publisher' => 'TechFuture Publishing',
+                'abstract' => 'An in-depth journal on robotics advancements, automation technologies, and real-world applications.',
+                'price' => 160000,
+                'available_copies' => 15,
+                'release_date' => '2024-03-20',
+                'volume' => 9,
+                'issue' => 2,
+                'part' => 7,
+                'access_url' => 'https://example.com/journal/advanced-robotics',
+            ],
+            [
+                'title' => 'Health and Wellness Journal',
+                'author' => 'Dr. Clara Bennett',
+                'publisher' => 'Wellness Publications',
+                'abstract' => 'A journal promoting new research in health, nutrition, mental well-being, and fitness.',
+                'price' => 140000,
+                'available_copies' => 18,
+                'release_date' => '2023-12-05',
+                'volume' => 7,
+                'issue' => 1,
+                'part' => 8,
+                'access_url' => 'https://example.com/journal/health-wellness',
+            ],
+        ];
 
-        Journal::create([
-            'title' => 'Sustainability and Climate Change Journal',
-            'author' => 'Dr. Jonathan Green',
-            'publisher' => 'Earth Matters Press',
-            'description' => 'A journal focused on global sustainability efforts, climate science, and renewable energy innovations.',
-            'price' => 180000,
-            'stock' => 12,
-            'datePublished' => '2023-11-01',
-            'volume' => 22,
-            'series' => 5,
-            'number' => 3,
-            'onlineLink' => 'https://example.com/journal/sustainability-climate',
-        ]);
-
-        Journal::create([
-            'title' => 'Global Economics and Policy Journal',
-            'author' => 'Prof. Mark Taylor',
-            'publisher' => 'Economics Press International',
-            'description' => 'A journal examining economic policies, global markets, and emerging trends in financial systems.',
-            'price' => 200000,
-            'stock' => 8,
-            'datePublished' => '2024-01-10',
-            'volume' => 30,
-            'series' => 4,
-            'number' => 5,
-            'onlineLink' => 'https://example.com/journal/global-economics',
-        ]);
-
-        Journal::create([
-            'title' => 'Journal of Advanced Robotics',
-            'author' => 'Dr. Alice Wang',
-            'publisher' => 'TechFuture Publishing',
-            'description' => 'An in-depth journal on robotics advancements, automation technologies, and real-world applications.',
-            'price' => 160000,
-            'stock' => 15,
-            'datePublished' => '2024-03-20',
-            'volume' => 9,
-            'series' => 2,
-            'number' => 7,
-            'onlineLink' => 'https://example.com/journal/advanced-robotics',
-        ]);
-
-        Journal::create([
-            'title' => 'Health and Wellness Journal',
-            'author' => 'Dr. Clara Bennett',
-            'publisher' => 'Wellness Publications',
-            'description' => 'A journal promoting new research in health, nutrition, mental well-being, and fitness.',
-            'price' => 140000,
-            'stock' => 18,
-            'datePublished' => '2023-12-05',
-            'volume' => 7,
-            'series' => 1,
-            'number' => 8,
-            'onlineLink' => 'https://example.com/journal/health-wellness',
-        ]);
+        foreach ($journals as $journal) {
+            Journal::create($journal);
+        }
     }
 }
