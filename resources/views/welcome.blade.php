@@ -4,13 +4,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Laravel LEO</title>
 
-        <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-        <!-- Styles / Scripts -->
         @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
             @vite(['resources/css/app.css', 'resources/js/app.js'])
         @else
@@ -32,12 +30,9 @@
                             <nav class="-mx-3 flex flex-1 justify-end">
                                 @if(auth()->check())
                                 @php
-                                    // Get the logged-in user's role
                                     $role = auth()->user()->role;
                                 @endphp
                             
-                                <!-- Display the appropriate dashboard link for student or lecturer -->
-
                                     <a href="{{ route($role . '.dashboard') }}" class="btn btn-primary">
                                         Go to {{ ucfirst($role) }} Dashboard
                                     </a>

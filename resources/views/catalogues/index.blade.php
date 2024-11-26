@@ -4,7 +4,6 @@
 <div class="container">
     <h1 class="mt-4">Library Catalog</h1>
 
-    <!-- Category Filter -->
     <form method="GET" action="{{ route('catalogues.index') }}" class="mb-4">
         <label for="category">Select Category:</label>
         <select name="category" id="category" class="form-control w-50 d-inline-block" onchange="this.form.submit()">
@@ -17,7 +16,6 @@
         </select>
     </form>
 
-    <!-- Display the table with catalog items -->
     <table class="table table-bordered table-striped">
         <thead class="thead-dark">
             <tr>
